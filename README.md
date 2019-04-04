@@ -8,4 +8,4 @@ https://docs.saltstack.com/en/latest/topics/installation/index.html#installation
 
 # Usage
 
-cd into the master fodler and run "vagrant up"
+cd into the master folder and run "vagrant up"
