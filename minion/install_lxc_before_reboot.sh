@@ -1,14 +1,14 @@
 # Install snapd
-yum install yum-plugin-copr epel-release
-yum copr enable ngompa/snapcore-el7
-yum install snapd
+yum -y install yum-plugin-copr epel-release
+yum -y copr enable ngompa/snapcore-el7
+yum -y install snapd
 systemctl enable --now snapd.socket
 
 # Install ZFS (skip if you don't want it)
-yum install http://download.zfsonlinux.org/epel/zfs-release.el7_4.noarch.rpm
+yum -y install http://download.zfsonlinux.org/epel/zfs-release.el7_4.noarch.rpm
 yum-config-manager --disable zfs
 yum-config-manager --enable zfs-kmod
-yum install zfs
+yum -y install zfs
 
 # Configure the kernel
 grubby --args="user_namespace.enable=1" --update-kernel="$(grubby --default-kernel)"
