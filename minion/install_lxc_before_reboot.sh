@@ -10,4 +10,7 @@ yum-config-manager --disable zfs
 yum-config-manager --enable zfs-kmod
 yum -y install zfs
 
-snap install lxd
+# Configure the kernel
+grubby --args="user_namespace.enable=1" --update-kernel="$(grubby --default-kernel)"
+grubby --args="namespace.unpriv_enable=1" --update-kernel="$(grubby --default-kernel)"
+echo "user.max_user_namespaces=3883" > /etc/sysctl.d/99-userns.conf
