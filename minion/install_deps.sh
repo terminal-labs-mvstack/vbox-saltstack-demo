@@ -20,5 +20,3 @@ rm epel-release-7-11.noarch.rpm
 yum -y install htop
 yum -y install net-tools
 yum -y install emacs
-
-
